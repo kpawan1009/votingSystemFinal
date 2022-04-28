@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>AMROHA CONSTITUENCY</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #e3f2fd;">
+        <div class="container-fluid">
+            <a class="navbar-brand">e-Voting Portal</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about/">About Us</a>
+                    </li>
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="candidate" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Candidate List
+                        </a>
+                        <ul class="dropdown-menu list-group-item-action" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item constituency_list c_one" href="/candidateaura/">Amroha</a></li>
+                            <li><a class="dropdown-item constituency_list c_two" href="/candidatepalg/">Palghar</a></li>
+
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Constituency List
+                        </a>
+                        <ul class="dropdown-menu list-group-item-action" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item constituency_list c_one" href="/amroha/">Amroha</a></li>
+                              <li><a class="dropdown-item constituency_list c_two" href="/palghar/">Palghar</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+             <div class="mx-2">
+                <button class="btn btn-warning btn-lg" style = " color : black " data-bs-toggle="modal" data-bs-target="#updateModal" >
+
+                   <strong>Update</strong>
+
+                 </button>
+            </div>
+        </div>
+    </nav>
+
+{% if success %}
+      <br>
+      <br> <br>
+<div class="alert alert-success alert-dismissible fade show align-items-center py-14 " display ="inline" role="alert" data-autohide="true">
+
+      <br> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="14" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+    <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+  </svg>
+  <div>
+ Success : Congrats you have been registered successfully
+
+      <br>
+      Your UID is <strong>{{uid}}</strong>
+  </div>
+</div>
+    {% endif %}
+
+
+
+
+
+
+    <br><br><br>
+    <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="font-weight-bold text-center"><small class="text-muted">Welcome to<br></small>
+                <br>
+                <mark>Amroha</mark>
+            </h1>
+        </div>
+    </div>
+
+    <div class="container my-4">
+        <div class="row mb-2">
+            <div class="col-md-6">
+                <div
+                    class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static">
+                        <strong class="d-inline-block mb-2 text-danger">Last-Date - 25/05/2022</strong>
+                        <h3 class="mb-0 text-primary my-2">
+                            <span
+                                class="border border-success py-2 rounded-top px-2 rounded-bottom rounded-left rounded-right badge bg-primary text-wrap">
+                                REGISTRATION
+                            </span>
+                        </h3><br>
+
+                        <p class="font-monospace">Click on the button below to register yourself for voting.<br> <span
+                                class=" text-danger">IGNORE if already done!!</span></p>
+                    </div>
+                    <div class="mx-4">
+                        <button class="btn btn-outline-primary mb-4" data-bs-toggle="modal" data-bs-target="#loginModal"
+                            style="font-size: large">REGISTER</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div
+                    class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static">
+                        <strong class="d-inline-block mb-2 text-warning">D-Day - 5/06/2022</strong>
+                        <h3 class="mb-0 text-primary my-2">
+
+                            <span
+                                class="border  py-2 rounded-top px-2 rounded-bottom rounded-left rounded-right badge bg-success text-wrap">
+                                VOTING
+                            </span>
+
+                        </h3><br>
+                        <p class="font-monospace">Click on the button below to cast your vote.<br> <span
+                                class=" text-danger">PLEASE be ready with your <strong>PAN CARD</strong> and
+                                <strong>UID</strong> for verification. </span></p>
+                    </div>
+                    <div class="mx-4">
+<!--                        <a href="" class="btn btn-outline-success mb-4" role="button" style="font-size: large">VOTE</a>-->
+                        <button class="btn btn-outline-success mb-4" data-bs-toggle="modal" data-bs-target="#voteModal"
+                            style="font-size: large">VOTE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel1">Fill in the details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                      <form method="POST" id="form1">
+                            {% csrf_token %}
+                        <div class="form-group">
+                            <label for="name">Name*</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="form-group" >
+                            <label for="age">Age*</label>
+                            <input type="number" class="form-control" id="age" name="age" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address*</label>
+                            <textarea class="form-control" name="address" id="address" cols="30" rows="5" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="phonenumber">Phone Number*</label>
+                           <input type="text" pattern="[1-9]{1}[0-9]{9}" id="phonenumber" name="phonenumber"
+                                 placeholder="1234456789 (10 digits)" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pannumber">PAN Card Number*</label>
+                            <input type="text" class="form-control" id="pannumber" name="pannumber"
+                                 placeholder="XXXXX0000X" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email address</label>
+                            <input type="email" class="form-control" id="email" name="email"
+                                aria-describedby="emailHelp">
+                        </div>
+                        <input type="submit" class="btn btn-primary" value="Submit">
+                        <button type="reset" class="btn btn-primary my-4">Reset</button>
+                       <div>
+
+                        </div>
+                        <div>
+                            <label><p align="right">fields marked as * are compulsary</p></label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+         <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="updateModalLabel1">Fill in the details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form method="POST" id="form4">
+                          {% csrf_token %}
+                        <div class="form-group">
+                            <label for="name3">UID*</label>
+                            <input type="text" class="form-control" id="name3" name="name3" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address3">Address*</label>
+                            <textarea class="form-control" name="address3" id="address3" cols="30" rows="5" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="phonenumber3">Phone Number*</label>
+                           <input type="text" pattern="[1-9]{1}[0-9]{9}" id="phonenumber3" name="phonenumber3"
+                                 placeholder="1234456789 (10 digits)" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="emailid3">Email address</label>
+                            <input type="email3" class="form-control" id="emailid3"
+                                aria-describedby="emailHelp" name="email3">
+                        </div>
+
+                        <input type="submit" class="btn btn-primary" value="Submit" name="form1">
+                        <button type="reset" class="btn btn-primary my-4">Reset</button>
+                        <div>
+
+                        </div>
+                        <div>
+                            <label><p aligh="right">fields marked as * are compulsary</p></label>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="modal fade" id="voteModal" tabindex="-1" role="dialog" aria-labelledby="voteModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginModalLabel">Fill in the details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+
+
+
+                <form method="POST" id="form2">
+                         {% csrf_token %}
+                    <div class="form-group">
+                        <label for="uid">UID</label>
+                        <input type="text-box" class="form-control" name="uid" id="uid">
+                    </div>
+                    <div class="form-group">
+                        <label for="pan">PAN Card Number</label>
+                        <input type="text-box" class="form-control" id="pan" name="pan">
+                    </div>
+                    <input type="submit" class="btn btn-primary" value="Submit">
+                    <button type="reset" class="btn btn-primary my-4">Reset</button>
+                </form>
+
+
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+ <footer class="bg-dark text-light fixed-bottom">
+    <p class="text-center py-0 my-0">
+
+    CopyRight &copy 2022 | All rights reserved
+    </p>
+  </footer>
+</body>
+
+</html>
