@@ -127,12 +127,3 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-# import asyncio
-# # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# #email settings
-# EMAIL_HOST='smtp.mail.yahoo.com'
-# EMAIL_PORT='465'
-# EMAIL_HOST_USER='noreplyvamp@yahoo.com'
-# EMAIL_HOST_PASSWORD='Studentsvamp@1'
-# EMAIL_USE_TLS=True
-# # EMAIL_USE_SSL=False
